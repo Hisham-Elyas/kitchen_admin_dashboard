@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../app_color.dart';
+import '../../page_controller.dart';
 
 class SideMenuSection extends StatelessWidget {
   const SideMenuSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    int numTap = 0;
     return Drawer(
       // backgroundColor: const AppColor.backgroundColor2,
       child: SafeArea(
@@ -32,8 +33,8 @@ class SideMenuSection extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 padding: EdgeInsets.all(20.h),
-                child: StatefulBuilder(
-                  builder: (context, setState) => Column(
+                child: GetBuilder<PagesController>(
+                  builder: (controller) => Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -43,9 +44,9 @@ class SideMenuSection extends StatelessWidget {
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/Dashboard.svg",
                                 text: 'Dashboard',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
 
@@ -53,27 +54,27 @@ class SideMenuSection extends StatelessWidget {
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/Products.svg",
                                 text: 'Products',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
                             case 2:
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/users.svg",
                                 text: 'Customers',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
                             case 3:
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/branches.svg",
                                 text: 'Branches',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
 
@@ -81,36 +82,36 @@ class SideMenuSection extends StatelessWidget {
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/Orders.svg",
                                 text: 'Orders',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
                             case 5:
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/Delivery.svg",
                                 text: 'Delivery',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
                             case 6:
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/Setting.svg",
                                 text: 'Settings',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
                             case 7:
                               return SideMenuButton(
                                 svgAssetName: "assets/svg/logout.svg",
                                 text: 'Logout',
-                                numTap: numTap == i,
+                                numTap: controller.pageNum == i,
                                 onPressed: () {
-                                  setState(() => numTap = i);
+                                  controller.goToPage(i);
                                 },
                               );
 

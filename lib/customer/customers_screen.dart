@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../responsive.dart';
 import '../widget/menu/home_nav_bar.dart';
-import '../widget/menu/home_side_bar_menu_section.dart';
 import 'section/customers_add_update_section.dart';
 import 'section/customers_section.dart';
 
@@ -16,8 +15,6 @@ class CustomersScreen extends StatelessWidget {
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (Responsive.isDesktop(context))
-            Expanded(flex: 2, child: SideMenuSection()),
           Expanded(
               flex: 8,
               child: Column(

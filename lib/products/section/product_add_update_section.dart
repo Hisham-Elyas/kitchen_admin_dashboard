@@ -292,9 +292,9 @@ class ComponentsExpandedWidget extends StatelessWidget {
             children: [
               InkWell(
                 onTap: onTap,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.topRight,
-                  child: const Icon(
+                  child: Icon(
                     Icons.arrow_drop_down_outlined,
                     color: Color(0xff656060),
                   ),
