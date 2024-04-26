@@ -101,6 +101,60 @@ class BarChartSample1State extends State<ChartSecion> {
                     ),
                   ),
                 ),
+                // const Spacer(),
+
+                /// DropdownButton
+                SizedBox(
+                  width: 241.w,
+                  height: 55.h,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(15.r),
+                    color: AppColor.backgroundColor3,
+                    child: DropdownButton(
+                      isExpanded: true,
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
+                      dropdownColor: AppColor.backgroundColor2,
+                      elevation: 2,
+                      value: 1,
+                      iconSize: 24.w,
+                      underline: const SizedBox(),
+                      borderRadius: BorderRadius.circular(10.r),
+                      items: [
+                        DropdownMenuItem(
+                          value: 1,
+                          child: Text(
+                            "All Branches",
+                            style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColor.fontColor2),
+                          ),
+                        ),
+                        DropdownMenuItem(
+                          value: 2,
+                          child: Text(
+                            "Branches 1",
+                            style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColor.fontColor2),
+                          ),
+                        ),
+                        DropdownMenuItem(
+                          value: 2,
+                          child: Text(
+                            "Branches 2",
+                            style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColor.fontColor2),
+                          ),
+                        ),
+                      ],
+                      onChanged: (value) {},
+                    ),
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 10.h),
