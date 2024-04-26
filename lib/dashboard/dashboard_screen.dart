@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'responsive.dart';
-import 'widget/main/main_section.dart';
-import 'widget/menu/side_menu_section.dart';
+import '../widget/menu/home_nav_bar.dart';
+import '../responsive.dart';
+import 'section/about_products_secion.dart';
+import 'section/chart_secion.dart';
+import 'section/circular_percent_secion.dart';
+import 'section/line_percent_secion.dart';
+import '../widget/menu/home_side_bar_menu_section.dart';
 
 class DashboardScreen extends StatelessWidget {
-  // final Widget mainSection;
   const DashboardScreen({super.key});
 
   @override
@@ -23,14 +27,56 @@ class DashboardScreen extends StatelessWidget {
                     icon: const Icon(Icons.menu)),
               ),
             ),
-      drawer: const SideMenuSection(),
+      drawer: SideMenuSection(),
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (Responsive.isDesktop(context))
-              const Expanded(flex: 2, child: SideMenuSection()),
-            const Expanded(flex: 8, child: MainSection()),
+              Expanded(flex: 2, child: SideMenuSection()),
+            Expanded(
+                flex: 8,
+                child: SingleChildScrollView(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (Responsive.isDesktop(context))
+                          const HomeNavBar(title: "Overview"),
+                        Padding(
+                          padding:
+                              EdgeInsets.only(left: 35.w, right: 5.w), //47*
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // Chart Secion Cart
+                                  ChartSecion(),
+                                  SizedBox(height: 20.h),
+
+                                  /// About Products Secion Cart
+                                  const AboutProductsSecion()
+                                ],
+                              ),
+                              SizedBox(width: 18.w),
+                              if (Responsive.isDesktop(context))
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    /// Circular Percent Secion Cart
+                                    const CircularPercentSecion(),
+                                    SizedBox(height: 20.h),
+
+                                    /// Line Percent Secion Cart
+                                    const LinePercentSecion()
+                                  ],
+                                ),
+                            ],
+                          ),
+                        ),
+                      ]),
+                )),
           ],
         ),
       ),
