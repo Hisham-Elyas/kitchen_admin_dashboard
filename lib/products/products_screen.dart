@@ -23,10 +23,10 @@ class ProductsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Product section
-                const ProductSecion(),
+                const Expanded(flex: 3, child: ProductSecion()),
                 SizedBox(width: 18.w),
                 // Add + Update  Product section
-                const ProductAddUpdateSection()
+                const Expanded(flex: 1, child: ProductAddUpdateSection())
               ],
             ),
           ),

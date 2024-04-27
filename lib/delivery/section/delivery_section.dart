@@ -15,7 +15,7 @@ class DeliverySection extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.dm.r),
         elevation: 1,
         child: Container(
-          width: 948.w,
+          // width: 948.w,
           height: 949.h,
           padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 20.dm.h),
           child: Column(children: [

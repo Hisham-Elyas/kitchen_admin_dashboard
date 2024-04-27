@@ -22,15 +22,13 @@ class MainScreen extends StatelessWidget {
               ),
         drawer: const SideMenuSection(),
         body: SafeArea(
-            child: StatefulBuilder(
-          builder: (context, mysetState) =>
-              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             if (Responsive.isDesktop(context))
               const Expanded(flex: 2, child: SideMenuSection()),
             GetBuilder<PagesController>(
                 builder: (controller) => Expanded(
                     flex: 8, child: controller.screen[controller.pageNum]))
           ]),
-        )));
+        ));
   }
 }

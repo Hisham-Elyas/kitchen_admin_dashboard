@@ -23,11 +23,11 @@ class BranchesScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// Branches  Section
-                const BranchesSection(),
+                const Expanded(flex: 3, child: BranchesSection()),
                 //  Branches Add Update Section
 
                 SizedBox(width: 18.w),
-                const BranchesAddUpdateSection(),
+                const Expanded(child: BranchesAddUpdateSection()),
               ],
             ),
           ),

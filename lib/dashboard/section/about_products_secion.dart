@@ -14,7 +14,7 @@ class AboutProductsSecion extends StatelessWidget {
       color: AppColor.backgroundColor2,
       borderRadius: BorderRadius.circular(20),
       child: Container(
-        width: 948.w,
+        // width: 948.w,
         // height: 341.h,*
         height: 360.h,
         padding: EdgeInsets.symmetric(horizontal: 25.w).copyWith(top: 25.h),
@@ -115,7 +115,7 @@ class TopProductsWidget extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
           height: 67.h,
-          width: 852.w,
+          // width: 852.w,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Row(
@@ -136,6 +136,7 @@ class TopProductsWidget extends StatelessWidget {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Size",
@@ -154,6 +155,7 @@ class TopProductsWidget extends StatelessWidget {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Price",
@@ -172,6 +174,7 @@ class TopProductsWidget extends StatelessWidget {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Sale",
@@ -190,6 +193,7 @@ class TopProductsWidget extends StatelessWidget {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Inventory",
@@ -208,6 +212,7 @@ class TopProductsWidget extends StatelessWidget {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Total",

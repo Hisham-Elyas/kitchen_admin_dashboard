@@ -22,12 +22,12 @@ class SittingsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// Sittings  Section
-                const SittingsSection(),
+                const Expanded(flex: 3, child: SittingsSection()),
 
                 /// Sittings Add Update Section
 
                 SizedBox(width: 18.w),
-                const SittingsAddUpdateSection(),
+                const Expanded(flex: 1, child: SittingsAddUpdateSection()),
               ],
             ),
           ),

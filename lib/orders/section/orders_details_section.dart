@@ -16,7 +16,7 @@ class OrderDetailsSection extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.r),
             elevation: 1,
             child: Container(
-              width: 1330.w,
+              // width: 1330.w,
               height: 949.h,
               padding: EdgeInsets.symmetric(horizontal: 56.w, vertical: 26.h),
               child: Column(

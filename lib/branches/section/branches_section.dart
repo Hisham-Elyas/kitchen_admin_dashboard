@@ -15,10 +15,10 @@ class BranchesSection extends StatelessWidget {
       children: [
         Material(
             color: AppColor.backgroundColor2,
-            borderRadius: BorderRadius.circular(20.dm.r),
+            borderRadius: BorderRadius.circular(20.r),
             elevation: 1,
             child: Container(
-              width: 948.w,
+              // width: 948.w,
               height: 949.h,
               padding:
                   EdgeInsets.symmetric(horizontal: 36.w, vertical: 20.dm.h),

@@ -27,7 +27,7 @@ class BarChartSample1State extends State<ChartSecion> {
       borderRadius: BorderRadius.circular(20),
       elevation: 1,
       child: Container(
-        width: 948.w,
+        // width: 948.w,
         height: 585.h,
         padding: EdgeInsets.symmetric(horizontal: 44.w, vertical: 35.h),
         child: Column(
@@ -62,16 +62,18 @@ class BarChartSample1State extends State<ChartSecion> {
                 SizedBox(
                   // width: 91.w,*
                   width: 120.w,
-                  height: 50.h,
+                  height: 55.h,
                   child: Material(
                     borderRadius: BorderRadius.circular(15.r),
                     color: AppColor.mainColor.withOpacity(0.18),
                     child: DropdownButton(
-                      padding: EdgeInsets.only(left: 10.w),
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
                       dropdownColor: AppColor.backgroundColor2,
                       elevation: 2,
                       iconEnabledColor: AppColor.mainColor,
                       value: 2,
+                      isExpanded: true,
+                      iconSize: 24.w,
                       underline: const SizedBox(),
                       borderRadius: BorderRadius.circular(27.r)
                           .copyWith(topRight: const Radius.circular(0)),

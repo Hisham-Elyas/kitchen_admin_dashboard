@@ -12,32 +12,25 @@ class CustomersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-              flex: 8,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (Responsive.isDesktop(context))
-                    const HomeNavBar(title: "Customers"),
-                  Padding(
-                    padding: EdgeInsets.only(left: 35.w, right: 5.w),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// Customers  Section
-                        const CustomersSection(),
+          if (Responsive.isDesktop(context))
+            const HomeNavBar(title: "Customers"),
+          Padding(
+            padding: EdgeInsets.only(left: 35.w, right: 5.w),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /// Customers  Section
+                const Expanded(flex: 3, child: CustomersSection()),
 
-                        /// Customers Add Update Section
-                        SizedBox(width: 18.w),
-                        const CustomersAddUpdateSection(),
-                      ],
-                    ),
-                  ),
-                ],
-              )),
+                /// Customers Add Update Section
+                SizedBox(width: 18.w),
+                const Expanded(flex: 1, child: CustomersAddUpdateSection()),
+              ],
+            ),
+          ),
         ],
       ),
     );

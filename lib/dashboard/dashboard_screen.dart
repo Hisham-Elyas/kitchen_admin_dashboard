@@ -13,48 +13,44 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            if (Responsive.isDesktop(context))
-              const HomeNavBar(title: "Overview"),
-            Padding(
-              padding: EdgeInsets.only(left: 35.w, right: 5.w), //47*
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Chart Secion Cart
-                      ChartSecion(),
-                      SizedBox(height: 20.h),
+    return SafeArea(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        if (Responsive.isDesktop(context)) const HomeNavBar(title: "Overview"),
+        Padding(
+          padding: EdgeInsets.only(left: 35.w, right: 5.w), //47*
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Chart Secion Cart
+                    ChartSecion(),
+                    SizedBox(height: 20.h),
 
-                      /// About Products Secion Cart
-                      const AboutProductsSecion()
-                    ],
-                  ),
-                  SizedBox(width: 18.w),
-                  if (Responsive.isDesktop(context))
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// Circular Percent Secion Cart
-                        const CircularPercentSecion(),
-                        SizedBox(height: 20.h),
-
-                        /// Line Percent Secion Cart
-                        const LinePercentSecion()
-                      ],
-                    ),
-                ],
+                    /// About Products Secion Cart
+                    const AboutProductsSecion()
+                  ],
+                ),
               ),
-            ),
-          ]),
+              SizedBox(width: 18.w),
+              if (Responsive.isDesktop(context))
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// Circular Percent Secion Cart
+                    const CircularPercentSecion(),
+                    SizedBox(height: 20.h),
+
+                    /// Line Percent Secion Cart
+                    const LinePercentSecion()
+                  ],
+                ),
+            ],
+          ),
         ),
-      ),
+      ]),
     );
   }
 }

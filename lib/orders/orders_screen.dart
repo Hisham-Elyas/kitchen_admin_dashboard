@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../responsive.dart';
 import '../widget/menu/home_nav_bar.dart';
 import 'section/orders_details_section.dart';
+import 'section/orders_section.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -21,10 +22,10 @@ class OrdersScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Orders section
-                // const OrderSecion(),
+                // Expanded(child: OrderSecion()),
                 // SizedBox(width: 18.w),
                 // Details + Delete -  Orders Details section
-                OrderDetailsSection()
+                Expanded(child: OrderDetailsSection())
               ],
             ),
           ),

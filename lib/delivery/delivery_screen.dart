@@ -23,10 +23,10 @@ class DeliveryScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// Delivery  Section
-                const DeliverySection(),
+                const Expanded(flex: 3, child: DeliverySection()),
                 // Delivery Add Update  Section
                 SizedBox(width: 18.w),
-                const DeliveryAddUpdateSection(),
+                const Expanded(flex: 1, child: DeliveryAddUpdateSection()),
               ],
             ),
           ),

@@ -19,7 +19,7 @@ class ProductAddUpdateSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.r),
         elevation: 1,
         child: Container(
-            width: 372.w,
+            // width: 372.w,
             height: 949.h,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             child: Form(
