@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../app_color.dart';
 import '../../widget/custom_buttom_widget.dart';
 import '../../widget/custom_search_widget.dart';
+import 'orders_details_section.dart';
 
 class OrderSecion extends StatelessWidget {
   const OrderSecion({super.key});
@@ -84,7 +86,9 @@ class OrderSecion extends StatelessWidget {
                   itemCount: 2,
                   itemBuilder: (context, index) => OrdersDetailsWidget(
                     onTapDelete: () {},
-                    onTapDetails: () {},
+                    onTapDetails: () {
+                      Get.to(() => const OrderDetailsSection());
+                    },
                   ),
                 ),
               ),
@@ -257,14 +261,14 @@ class OrdersDetailsWidget extends StatelessWidget {
                   height: 32.76.h,
                   title: "Details",
                   width: 117.w,
-                  onTap: () {},
+                  onTap: onTapDetails,
                 ),
                 CustomButtom(
                   color: const Color(0xffF11515),
                   height: 32.76.h,
                   title: "Delete",
                   width: 117.w,
-                  onTap: () {},
+                  onTap: onTapDelete,
                 ),
               ],
             )

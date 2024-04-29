@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../responsive.dart';
 import '../widget/menu/home_nav_bar.dart';
-import 'section/orders_details_section.dart';
 import 'section/orders_section.dart';
 
 class OrdersScreen extends StatelessWidget {
@@ -18,16 +17,8 @@ class OrdersScreen extends StatelessWidget {
           if (Responsive.isDesktop(context)) const HomeNavBar(title: "Orders"),
           Padding(
             padding: EdgeInsets.only(left: 35.w, right: 5.w), //47* - 28*
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Orders section
-                // Expanded(child: OrderSecion()),
-                // SizedBox(width: 18.w),
-                // Details + Delete -  Orders Details section
-                Expanded(child: OrderDetailsSection())
-              ],
-            ),
+            // Orders section
+            child: const Expanded(child: OrderSecion()),
           ),
         ],
       ),

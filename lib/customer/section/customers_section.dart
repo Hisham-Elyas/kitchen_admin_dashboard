@@ -116,7 +116,7 @@ class CustomersWidget extends StatelessWidget {
                           height: 36.5.h,
                           title: "Add Code",
                           width: 143.w,
-                          onTap: () {},
+                          onTap: onTapAddCode,
                         ),
                         SizedBox(width: 13.w),
                         CustomButtom(
@@ -124,7 +124,7 @@ class CustomersWidget extends StatelessWidget {
                           height: 36.5.h,
                           title: "Delete",
                           width: 143.w,
-                          onTap: () {},
+                          onTap: onTapDelete,
                         ),
                       ],
                     ),

@@ -222,14 +222,14 @@ class ProductWidget extends StatelessWidget {
                   height: 32.76.h,
                   title: "Update",
                   width: 117.w,
-                  onTap: () {},
+                  onTap: onTapUpdate,
                 ),
                 CustomButtom(
                   color: const Color(0xffF11515),
                   height: 32.76.h,
                   title: "Delete",
                   width: 117.w,
-                  onTap: () {},
+                  onTap: onTapDelete,
                 ),
               ],
             )

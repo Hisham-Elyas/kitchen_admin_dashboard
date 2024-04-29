@@ -5,8 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../app_color.dart';
 
 class HomeNavBar extends StatelessWidget {
+  final bool isShowBackButton;
   final String title;
-  const HomeNavBar({super.key, required this.title});
+  const HomeNavBar({
+    super.key,
+    required this.title,
+    this.isShowBackButton = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,11 @@ class HomeNavBar extends StatelessWidget {
       ),
       child: Row(
         children: [
+          if (isShowBackButton)
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: BackButton(),
+            ),
           Text(
             title,
             style: TextStyle(

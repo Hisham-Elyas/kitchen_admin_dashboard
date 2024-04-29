@@ -112,7 +112,7 @@ class AdminWidget extends StatelessWidget {
                           height: 36.5.h,
                           title: "Update",
                           width: 143.w,
-                          onTap: () {},
+                          onTap: onTapUpdate,
                         ),
                         SizedBox(width: 13.w),
                         CustomButtom(
@@ -120,7 +120,7 @@ class AdminWidget extends StatelessWidget {
                           height: 36.5.h,
                           title: "Delete",
                           width: 143.w,
-                          onTap: () {},
+                          onTap: onTapDelete,
                         ),
                       ],
                     ),

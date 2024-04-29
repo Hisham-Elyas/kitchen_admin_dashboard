@@ -2,64 +2,79 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../app_color.dart';
+import '../../responsive.dart';
 import '../../widget/custom_buttom_widget.dart';
+import '../../widget/menu/home_nav_bar.dart';
 
 class OrderDetailsSection extends StatelessWidget {
   const OrderDetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Material(
-            color: AppColor.backgroundColor2,
-            borderRadius: BorderRadius.circular(20.r),
-            elevation: 1,
-            child: Container(
-              // width: 1330.w,
-              height: 949.h,
-              padding: EdgeInsets.symmetric(horizontal: 56.w, vertical: 26.h),
-              child: Column(
-                children: [
-                  //// Orders Details
-                  Expanded(
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) =>
-                          SizedBox(height: 15.h),
-                      itemCount: 12,
-                      itemBuilder: (context, index) =>
-                          const OrdersDetailsWidget(),
-                    ),
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (Responsive.isDesktop(context))
+            const HomeNavBar(title: "Orders", isShowBackButton: true),
+          Padding(
+            padding: EdgeInsets.only(left: 35.w, right: 5.w), //47* - 28*
+            child: Stack(
+              children: [
+                Material(
+                    color: AppColor.backgroundColor2,
+                    borderRadius: BorderRadius.circular(20.r),
+                    elevation: 1,
+                    child: Container(
+                      // width: 1330.w,
+                      height: 949.h,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 56.w, vertical: 26.h),
+                      child: Column(
+                        children: [
+                          //// Orders Details
+                          Expanded(
+                            child: ListView.separated(
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 15.h),
+                              itemCount: 12,
+                              itemBuilder: (context, index) =>
+                                  const OrdersDetailsWidget(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+                Positioned(
+                  bottom: 15.h,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomButtom(
+                        color: const Color(0xff5EF45B),
+                        height: 61.h,
+                        width: 258.w,
+                        title: "Confirm",
+                        onTap: () {},
+                      ),
+                      SizedBox(width: 34.w),
+                      CustomButtom(
+                        color: const Color(0xffF11515),
+                        height: 61.h,
+                        width: 258.w,
+                        title: "Delete",
+                        onTap: () {},
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            )),
-        Positioned(
-          bottom: 15.h,
-          left: 0,
-          right: 0,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomButtom(
-                color: const Color(0xff5EF45B),
-                height: 61.h,
-                width: 258.w,
-                title: "Confirm",
-                onTap: () {},
-              ),
-              SizedBox(width: 34.w),
-              CustomButtom(
-                color: const Color(0xffF11515),
-                height: 61.h,
-                width: 258.w,
-                title: "Delete",
-                onTap: () {},
-              ),
-            ],
+                )
+              ],
+            ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }
